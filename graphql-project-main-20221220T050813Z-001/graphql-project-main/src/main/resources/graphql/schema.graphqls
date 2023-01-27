@@ -1,0 +1,43 @@
+input AuthorInput{
+    authorName: String
+    age: Int
+    numberOfBooksWritten: Int
+}
+
+type Author {
+    id: ID!
+    authorName: String
+    age: Int
+    numberOfBooksWritten: Int
+    books: [Book]
+}
+
+input BookInput{
+    bookTitle:String
+    publishingYear:Int
+    ratings:Float
+    price:Float
+    authorId: Int
+}
+
+type Book {
+    id: ID!
+    bookTitle: String!
+    publishingYear: Int
+    ratings: Float
+    price: Float
+    author: Author
+}
+
+type Query {
+    allBooks:[Book]
+    getBook(bookId:Int):Book
+    allAuthors:[Author]
+    getAuthor(authorId:Int):Author
+    getBookByTitleRatingsAndPublishingYear(bookTitle:String,ratings: Float,publishingYear:Int):[Book]
+}
+
+type Mutation {
+    createBook(book:BookInput):Book
+    createAuthor(author:AuthorInput):Author
+}

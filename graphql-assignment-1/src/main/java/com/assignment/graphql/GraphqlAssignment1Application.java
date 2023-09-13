@@ -10,7 +10,7 @@ public class GraphqlAssignment1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GraphqlAssignment1Application.class, args);
-		System.out.println("hello this is graphql application");
+		System.out.println("hello this is graphql application using github action ");
 		
     }
 }

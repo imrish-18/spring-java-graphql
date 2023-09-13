@@ -1,5 +1,8 @@
 name: deploy pr
 on:
+  pull_request:
+    branches:
+      - github-action
   push:
     branches:
       - github-action
